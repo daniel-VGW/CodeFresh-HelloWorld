@@ -23,7 +23,7 @@ steps:
   build:
     title: "Building Docker image"
     type: "build"
-    image_name: "daniel-VGW/CodeFresh-HelloWorld"
+    image_name: "hello-world/CodeFresh-HelloWorld"
     working_directory: "${{clone}}"
     tag: "${{CF_BRANCH_TAG_NORMALIZED}}"
     dockerfile: "Dockerfile"
@@ -47,7 +47,7 @@ steps:
     title: Push to ECR
     description: Pushing docker image to ecr
     candidate: ${{build}}
-    tag: 'hello-world/${{CF_BRANCH_TAG_NORMALIZED}}-${{CF_SHORT_REVISION}}'
+    tag: '${{CF_BRANCH_TAG_NORMALIZED}}-${{CF_SHORT_REVISION}}'
     registry: hello-world
     fail_fast: false
     stage: "push_to_ecr"
