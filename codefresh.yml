@@ -7,7 +7,6 @@ stages:
   - "clone"
   - "build"
   - "test"
-  # - "push_to_ecr"
 
 steps:
   clone:
@@ -34,18 +33,9 @@ steps:
     type: "freestyle" # Run any command
     image: ${{build}}
     working_directory: "${{clone}}" # Running command where code cloned
+     
     commands:
       - "ls"
       - "npm run test2"
-    stage: "test"
 
-  # push_to_ecr:
-  #   type: push
-  #   title: Push to ECR
-  #   description: Pushing to ECR
-  #   candidate: ${{build}}
-  #   tag: latest
-  #   image_name: codefresh/hello-world
-  #   registry: hello-world
-  #   fail_fast: false
-  #   stage: "push_to_ecr"
+    stage: "test"
