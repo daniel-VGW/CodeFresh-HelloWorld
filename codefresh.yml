@@ -34,11 +34,9 @@ steps:
     type: "freestyle" # Run any command
     image: ${{build}}
     working_directory: "${{clone}}" # Running command where code cloned
-     
     commands:
       - "ls"
       - "npm run test2"
-
     stage: "test"
 
   # push_to_ecr:
