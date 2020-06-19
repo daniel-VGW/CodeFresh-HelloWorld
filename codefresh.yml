@@ -39,3 +39,13 @@ steps:
       - "npm run test2"
 
     stage: "test"
+
+  push_to_ecr:
+    type: push
+    title: Push to ECR
+    description: Pushing to ECR
+    candidate: ${{build}}
+    tag: latest
+    image_name: codefresh/hello-world
+    registry: hello-world
+    fail_fast: false
