@@ -47,7 +47,7 @@ steps:
     title: Push to ECR
     description: Pushing docker image to ecr
     candidate: ${{build}}
-    # tag: '${{CF_BRANCH_TAG_NORMALIZED}}-${{CF_SHORT_REVISION}}'
-    registry: 686540727993.dkr.ecr.ap-southeast-2.amazonaws.com/hello-world
+    tag: 'hello-world/${{CF_BRANCH_TAG_NORMALIZED}}-${{CF_SHORT_REVISION}}'
+    registry: hello-world
     fail_fast: false
     stage: "push_to_ecr"
