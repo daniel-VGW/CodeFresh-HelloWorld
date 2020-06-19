@@ -23,7 +23,7 @@ steps:
   build:
     title: "Building Docker image"
     type: "build"
-    image_name: "hello-world/CodeFresh-HelloWorld"
+    image_name: "CodeFresh-HelloWorld"
     working_directory: "${{clone}}"
     tag: "${{CF_SHORT_REVISION}}"
     dockerfile: "Dockerfile"
