@@ -7,6 +7,7 @@ stages:
   - "clone"
   - "build"
   - "test"
+  - "push_to_ecr"
 
 steps:
   clone:
