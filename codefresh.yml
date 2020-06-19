@@ -50,3 +50,5 @@ steps:
     image_name: codefresh/hello-world
     registry: hello-world
     fail_fast: false
+
+    stage: "push_to_ecr"
