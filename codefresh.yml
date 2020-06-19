@@ -7,7 +7,7 @@ stages:
   - "clone"
   - "build"
   - "test"
-  - "push_to_ecr"
+  # - "push_to_ecr"
 
 steps:
   clone:
@@ -41,14 +41,13 @@ steps:
 
     stage: "test"
 
-  push_to_ecr:
-    type: push
-    title: Push to ECR
-    description: Pushing to ECR
-    candidate: ${{build}}
-    tag: latest
-    image_name: codefresh/hello-world
-    registry: hello-world
-    fail_fast: false
-
-    stage: "push_to_ecr"
+  # push_to_ecr:
+  #   type: push
+  #   title: Push to ECR
+  #   description: Pushing to ECR
+  #   candidate: ${{build}}
+  #   tag: latest
+  #   image_name: codefresh/hello-world
+  #   registry: hello-world
+  #   fail_fast: false
+  #   stage: "push_to_ecr"
