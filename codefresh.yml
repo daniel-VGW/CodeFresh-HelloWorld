@@ -36,4 +36,5 @@ steps:
      
     commands:
       - "ls"
+      - "npm run test2"
     stage: "test"

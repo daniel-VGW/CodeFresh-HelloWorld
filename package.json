@@ -6,7 +6,8 @@
     "main": "server.js",
     "scripts": {
         "start": "node server.js",
-        "test": "echo 'test completed'"
+        "test": "echo 'test completed'",
+        "test-2": "echo 'test 2 completed'"
     },
     "dependencies": {
         "express": "^4.16.1"
