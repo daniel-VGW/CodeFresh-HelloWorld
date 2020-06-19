@@ -7,6 +7,7 @@ stages:
   - "clone"
   - "build"
   - "test"
+  - "push_to_ecr"
 
 steps:
   clone:
@@ -40,3 +41,14 @@ steps:
       - "npm run test2"
 
     stage: "test"
+
+  push_to_ecr:
+    type: push
+    title: Push to ECR
+    description: Pushing docker image to ecr
+    candidate: ${{build}}
+    tag: latest
+    image_name: codefresh/app
+    registry: hello-world
+    fail_fast: false
+    stage: "push_to_ecr"
