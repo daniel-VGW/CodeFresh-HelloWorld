@@ -48,7 +48,6 @@ steps:
     description: Pushing docker image to ecr
     candidate: ${{build}}
     tag: latest
-    image_name: codefresh/app
     registry: hello-world
     fail_fast: false
     stage: "push_to_ecr"
