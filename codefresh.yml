@@ -46,6 +46,7 @@ steps:
     type: push
     title: Push to ECR
     description: Pushing docker image to ecr
+    tag: '${{CF_BRANCH_TAG_NORMALIZED}}-${{CF_SHORT_REVISION}}'
     candidate: ${{build}}
     registry: hello-world
     fail_fast: false
