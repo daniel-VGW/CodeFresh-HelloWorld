@@ -31,9 +31,10 @@ steps:
   test:
     title: "Running test"
     type: "freestyle" # Run any command
-    image: "ubuntu:latest" # The image in which command will be executed
+    image: ${{build}}
     working_directory: "${{clone}}" # Running command where code cloned
+     
     commands:
       - "ls"
-      - "npm run test"
+      - "npm test"
     stage: "test"
